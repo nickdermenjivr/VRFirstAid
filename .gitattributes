@@ -40,7 +40,6 @@
 *.bundle lfs
 
 
-
 # Unity Binary Assets
 *.cubemap lfs
 *.unitypackage lfs
