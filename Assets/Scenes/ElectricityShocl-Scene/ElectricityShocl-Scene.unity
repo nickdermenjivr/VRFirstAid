@@ -1156,6 +1156,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 32900000, guid: 7d2ee992861a8fe4da83dc5ad5a79d84, type: 3}
     - target: {fileID: 4415745982179208543, guid: dc067c577ec1b854684d789b6e727cc0, type: 3}
+      propertyPath: m_AudioOutputMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415745982179208543, guid: dc067c577ec1b854684d789b6e727cc0, type: 3}
       propertyPath: m_ControlledAudioTrackCount
       value: 1
       objectReference: {fileID: 0}
@@ -24441,7 +24445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8504545929900845797, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
       propertyPath: StepChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8504545929900845797, guid: 6dfb9516951cd564dbfe5d3be9c5948d, type: 3}
       propertyPath: AngleChanged.m_PersistentCalls.m_Calls.Array.size
