@@ -14,13 +14,13 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.17890707, g: 0.18978536, b: 0.21698111, a: 1}
+  m_AmbientSkyColor: {r: 0.10343538, g: 0.10770341, b: 0.122641504, a: 1}
   m_AmbientEquatorColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_AmbientGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientIntensity: 1
@@ -9775,9 +9775,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8159917958846238105, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8159917958846238105, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 893cf704e5a5ac14998969f38ef3b369, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a8a6da5881ed144e8c833df96287856, type: 2}
     - target: {fileID: 8159917958848139129, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -10110,6 +10114,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 6.98
       objectReference: {fileID: 0}
+    - target: {fileID: 8159917959901891826, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8159917960025029046, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
@@ -10125,6 +10133,10 @@ PrefabInstance:
     - target: {fileID: 8159917960208869001, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
       propertyPath: m_Convex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8159917960390602907, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8159917960528820551, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
       propertyPath: m_IsActive
@@ -10276,7 +10288,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6a8a6da5881ed144e8c833df96287856, type: 2}
     - target: {fileID: 8159917960823907430, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8159917960870842080, guid: a00ee8c0aefcc5048b7a9c276616b389, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -27049,7 +27061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6707951067419483808, guid: a5226a72c9553294abfe172a458b5805, type: 3}
       propertyPath: heightOffset
-      value: 1.2
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6707951067419483810, guid: a5226a72c9553294abfe172a458b5805, type: 3}
       propertyPath: m_TagString
@@ -45542,8 +45554,8 @@ Transform:
   m_GameObject: {fileID: 1728084029}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.181, y: 1.7831, z: -1.8703}
-  m_LocalScale: {x: 0.103663646, y: 0.13069393, z: 0.119332924}
+  m_LocalPosition: {x: -0.191, y: 1.7831, z: -1.87}
+  m_LocalScale: {x: 0.103663646, y: 0.14117557, z: 0.119332924}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 275369342}
@@ -49030,9 +49042,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1141807910198149572, guid: 2367bf03da674184783a4254456143c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1255053967005034563, guid: 2367bf03da674184783a4254456143c7, type: 3}
       propertyPath: m_Name
       value: VFX_Fire_Floor_02_Simple
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255053967005034563, guid: 2367bf03da674184783a4254456143c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255053967005034563, guid: 2367bf03da674184783a4254456143c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1255053967005034564, guid: 2367bf03da674184783a4254456143c7, type: 3}
       propertyPath: m_LocalScale.x
@@ -49089,6 +49113,14 @@ PrefabInstance:
     - target: {fileID: 1255053967005034564, guid: 2367bf03da674184783a4254456143c7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235701488893169939, guid: 2367bf03da674184783a4254456143c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502111466653747097, guid: 2367bf03da674184783a4254456143c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -56069,7 +56101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2107224391
 Transform:
   m_ObjectHideFlags: 0
@@ -56119,8 +56151,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.8867924, g: 0.5308944, b: 0.12046986, a: 1}
-  m_Intensity: 0.3
+  m_Color: {r: 0.8962264, g: 0.59398955, b: 0.24857599, a: 1}
+  m_Intensity: 0.6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
