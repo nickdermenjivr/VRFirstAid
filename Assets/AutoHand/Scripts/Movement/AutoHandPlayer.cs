@@ -59,6 +59,15 @@ namespace Autohand {
         [EnableIf("useMovement"), FormerlySerializedAs("moveSpeed")]
         [Tooltip("Movement speed when isGrounded")]
         public float maxMoveSpeed = 1.5f;
+
+        private float _moveSpeed;
+
+        public float maxMoveSpeed1
+        {
+            get => maxMoveSpeed;
+            set => maxMoveSpeed = value;
+        }
+
         [EnableIf("useMovement")]
         [Tooltip("Movement acceleration when isGrounded")]
         public float moveAcceleration = 10f;
@@ -207,6 +216,8 @@ namespace Autohand {
 
         public virtual void Start() {
 
+            _moveSpeed = maxMoveSpeed;
+            
             lastUpdatePosition = transform.position;
 
             gameObject.layer = LayerMask.NameToLayer(HandPlayerLayer);
@@ -1038,6 +1049,15 @@ namespace Autohand {
                 return forwardFollow.rotation * (new Vector3(moveAxis.x, moveAxis.y, moveAxis.z));
         }
 
+        public void DisableMovement()
+        {
+            maxMoveSpeed = 0f;
+        }
+
+        public void EnableMovement()
+        {
+            maxMoveSpeed = _moveSpeed;
+        }
 
     }
 }
