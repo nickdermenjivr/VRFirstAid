@@ -29,8 +29,14 @@ public class PhysicsGadgetSlider : PhysicsGadgetConfigurableLimitReader{
     private float maximum;
     float[] stepMarkers;
 
+    public bool isAngularMovement;
+
     protected void FixedUpdate(){
             var value = GetValue();
+            if (isAngularMovement)
+            {
+                value = GetAngleValue();
+            }
         if(!max && mid && value+threshold >= 1) {
             Max();
         }

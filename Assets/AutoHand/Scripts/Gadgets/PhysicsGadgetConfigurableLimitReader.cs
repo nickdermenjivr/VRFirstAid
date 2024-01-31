@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Autohand{
@@ -15,11 +13,14 @@ namespace Autohand{
         protected Vector3 axisPos;
         float value;
         Vector3 limitAxis;
+        protected Vector3 angularAxisPos;
 
         protected virtual void Start(){
             joint = GetComponent<ConfigurableJoint>();
             limitAxis = new Vector3(joint.xMotion == ConfigurableJointMotion.Locked ? 0 : 1, joint.yMotion == ConfigurableJointMotion.Locked ? 0 : 1, joint.zMotion == ConfigurableJointMotion.Locked ? 0 : 1);
             axisPos = Vector3.Scale(transform.localPosition, limitAxis);
+
+            angularAxisPos = transform.localEulerAngles;
         }
 
 
@@ -40,6 +41,30 @@ namespace Autohand{
             if (Mathf.Abs(value) < playRange)
                 value = 0;
             return Mathf.Clamp(value, -1f, 1f);
+        }
+        
+        public float GetAngleValue() {
+            bool positive = true;
+            var currPos = transform.localEulerAngles;
+            if(angularAxisPos.x < currPos.x || angularAxisPos.y < currPos.y || angularAxisPos.z < currPos.z)
+                positive = false;
+
+            if(invertValue)
+                positive = !positive;
+
+            var minValue = joint.lowAngularXLimit.limit;
+            var maxValue = joint.highAngularXLimit.limit;
+            
+            value = currPos.x > 180 ? currPos.x - angularAxisPos.x - 360 : currPos.x - angularAxisPos.x;
+            
+            if(!positive) value *= -1;
+            
+            var res = Mathf.Clamp(value, minValue, maxValue);
+            
+            if (Mathf.Abs(value) < playRange)
+                res = 0;
+
+            return Mathf.Clamp(res, -1f, 1f);
         }
 
         public ConfigurableJoint GetJoint() => joint;
